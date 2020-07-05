@@ -32,7 +32,7 @@ export default function Bookcard({ bookcard }) {
           <div className="fulldes"> <b> ISBN: </b> {bookcard.isbn}</div>
           <div className="fulldes"> <b>Status:</b> {bookcard.status.toLowerCase()}</div>
           <div className="fulldes "><b>Category : </b> {bookcard.categories} </div>
-          <div className="fulldes "><b>Date count: </b> {bookcard.publishedDate} </div>
+          <div className="fulldes "><b>Published: </b> {bookcard.publishedDate} </div>
           <div className="fulldes extended"><b></b> {bookcard.longDescription} </div>
           <div className="fulldes "><b>Page count: </b> {bookcard.pages} </div> 
        </div>

@@ -33,8 +33,18 @@ function App() {
       )
       .then((res) => {
         setBookcards(
+      
           res.data.map((book, index) => {
-          
+            let date
+            if (book.publishedDate){
+                date = new Date(book.publishedDate.$date)
+                console.log(date.toDateString().slice(4,10)+", "+date.getFullYear() )
+                date = date.toDateString().slice(4,10)+", "+date.getFullYear() 
+
+                
+            }
+            else
+                date = "NODATE"
             return {
               id: `${index}-${Date.now()}`,
               image: book.thumbnailUrl,
@@ -45,9 +55,11 @@ function App() {
               isbn:book.isbn,
               categories: book.categories,
               pages: book.pageCount,
-              status: book.status
+              status: book.status,
+              publishedDate: date
             };
           })
+
         );
       });
   }, []);
